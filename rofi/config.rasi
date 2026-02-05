@@ -1,0 +1,205 @@
+/*
+#  ____        __ _  
+# |  _ \ ___  / _(_) 
+# | |_) / _ \| |_| | 
+# |  _ < (_) |  _| | 
+# |_| \_\___/|_| |_| 
+#                    
+# by Stephan Raabe (2023) 
+# ----------------------------------------------------- 
+*/
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    font:                       "JetBrainsMono Nerd Font";
+    show-icons:                 true;
+}
+
+/* Ersetze die alten Imports durch diesen festen Block: */
+@theme "~/.config/rofi/colors.rasi"
+
+* {
+    /* Font */
+    font: "JetBrainsMono Nerd Font 14";
+
+    /* Wallpaper / Bild für die linke Seite */
+    /* Pfad zu deinem echten Hintergrundbild! */
+    current-image: url("~/Bilder/light_blue_image.png", height);
+
+    /* Abstände und Rahmen */
+    border-width:   2px;
+    border-radius:  12px;
+}/* ---- Load font ---- */
+
+// Main //
+window {
+    height:                      21em;
+    width:                       35em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      3px;
+    border-color:                @primary;
+    border-radius:               50px;
+    background-color:            transparent;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" ];
+    // background-color:            @background-rofi;
+    background-color:            transparent;
+    background-image:            @current-image; 
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    margin:                      1em 2em;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+    border-radius:               2em;
+    background-color:            @light-blue;
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "  ";
+    padding:                     1em 0.3em 0 0;
+    text-color:                  @on-surface;
+    background-color:            transparent;
+}
+
+entry {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     1em;
+    text-color:                  @on-surface;
+    cursor:                      text;
+    placeholder:                 "Search";
+    background-color:            transparent;
+    placeholder-color:           inherit;
+}
+
+// Lists //
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    background-color:            transparent;
+}
+
+listview {
+    padding:                     1.0em 1.5em;
+    spacing:                     0.5em;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    border:                      0px;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+}
+
+element selected.normal {
+    background-color:            @light-blue;
+    text-color:                  @on-surface;
+    border-radius:               1.5em;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element normal.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element selected.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element selected.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element-icon {
+    size:                        3em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    border-radius:               0em;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @on-surface;
+    background-color:            @background;
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}

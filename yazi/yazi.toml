@@ -1,0 +1,35 @@
+[opener]
+# Wir sagen Yazi explizit, wie es nvim starten soll
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Neovim", for = "unix" },
+    { run = 'nano "$@"', block = true, desc = "Nano", for = "unix" },
+    { run = 'gedit "$@"', block = true, desc = "Gedit", for = "unix" },
+]
+
+# imv ohne block, aber mit orphan = true
+view = [
+    { run = '''
+        imv "$1" "$(dirname "$1")"/* &
+    ''', orphan = true, desc = "imv", for = "unix" }
+]
+
+play = [
+    { run = 'mpv "$@" &', orphan = true, desc = "mpv", for = "unix" }
+]
+
+[open]
+rules = [
+      
+    # Bilder
+    { mime = "image/*", use = "view"},
+    { mime = "video/*", use = "play"},
+
+    # Alle Textdateien, JSON, Lua, Conf etc. mit Neovim öffnen
+    { mime = "text/*", use = "edit" },
+    { mime = "application/json", use = "edit" },
+    { name = "*.conf", use = "edit" },
+    { name = "*.lua", use = "edit" },
+    { name = "*.sh", use = "edit" }, 
+    { mime = "inode/x-empty", use = "edit"},
+    { mime = "*", use = "edit"},
+]

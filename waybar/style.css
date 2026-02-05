@@ -1,0 +1,182 @@
+@define-color scheenesWeiß #e8eaed;
+@define-color scheenesSchwarz #121212;
+@define-color scheenesBlau #1a1b26;
+@define-color waybar-color rgba(0, 0, 0, 0.1);
+
+@define-color workspace-color-on-surface #E3F2FD;
+@define-color workspace-color-background #0D47A1;
+@define-color workspace-color-primary #6282bd;
+@define-color workspace-color-on-primary #FFFFFF;
+@define-color workspace-color-on-primary-container #BBDEFB;
+
+
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font Propo", "Inter";
+    
+    font-size: 22px;
+    
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: @waybar-color;
+    color: @scheenesWeiß;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces {
+    margin: 0px 7px 0px 0px;
+    min-width: 210px;
+}
+
+#workspaces button {
+    min-width: 32px;
+    border-radius: 32px;
+    padding: 0px 20px;
+    margin: 0px 4px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #2f354a;
+    background-color: #2f354a;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#workspaces button.active {
+    min-width: 50px;
+    color: @workspace-color-on-primary;
+    background: @workspace-color-primary;
+    border-radius: 12px;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#workspaces button:hover {
+    color: @workspace-color-on-surface;
+    background: @workspace-color-on-primary-container;
+    border-radius: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#network, #pulseaudio, #bluetooth, #custom-nightlight, #custom-timer {
+    padding: 0 0px;
+    margin: 0 15px; 
+    background: transparent;
+    color: @scheenesWeiß;
+}
+
+#pulseaudio {
+    margin: 0 4px;
+    margin-right: 0px;
+}
+
+#custom-power {
+    margin: 0 2px;
+}
+
+#network {
+    margin-right: 12px;
+    margin-left: 18px;
+}
+
+#clock {
+    font-weight: 700;
+    margin: 0 20px;
+}
+
+#pulseaudio {
+    margin: 0 10px;
+}
+
+#bluetooth {
+    color: #89b4fa; /* Ein schönes Blau */
+}
+
+#bluetooth.disabled {
+    color: #f38ba8; /* Rot, wenn deaktiviert */
+}
+
+#bluetooth.connected {
+    color: #a6e3a1; /* Grün, wenn verbunden */
+}
+
+#custom-nightlight.activated {
+    color: #fab387; /* Orange, wenn der Nachtmodus an ist */
+}
+
+#custom-nightlight {
+    margin-left: 18px;
+}
+
+#custom-updates {
+    padding: 0 5px;
+    margin: 0 10px; 
+    background: transparent;
+    color: @scheenesWeiß;
+    font-weight: 500;
+}
+
+#window {
+    padding: 0 10px;
+    margin: 0 10px; 
+    background: transparent;
+    color: @scheenesWeiß;
+}
+
+/* In deiner style.css: */
+#custom-logo {
+    background-image: url("/home/michaels/.config/waybar/CachyOS.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 0 10px;
+    margin: 0 0px 0 5px;
+}
+
+#logo-updates #custom-updates {
+    margin-left: 0px;  /* Nur kleiner Abstand zum Logo */
+}
+
+#custom-timer {
+    
+}
+
+#taskbar {
+    background: @backgroundlight;
+    margin: 0px 2px 0px 10px;
+    padding:0px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+}
+
+#custom-zen {
+    font-size: 25px;
+    margin: 0 0px 0 25px; 
+}
+
+#custom-rofi {
+    margin: 0 0px 0 30px; 
+}
