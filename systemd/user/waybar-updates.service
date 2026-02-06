@@ -1,0 +1,6 @@
+[Unit]
+Description=Update counter for Waybar
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/waybar/fetch-updates.sh
