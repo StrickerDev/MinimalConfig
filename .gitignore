@@ -1,0 +1,12 @@
+*
+
+!.gitignore
+
+!fish/**
+!hypr/**
+!kitty/**
+!nvim/**
+!pulse/**
+!rofi/**
+!waybar/**
+!yazi/**
