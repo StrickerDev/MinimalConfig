@@ -13,7 +13,7 @@
 
 * {
     border: none;
-    font-family: "JetBrainsMono Nerd Font Propo", "Inter";
+    font-family: "Inter", "JetBrainsMono Nerd Font Propo";
     
     font-size: 22px;
     
@@ -82,36 +82,33 @@ tooltip label {
 */
 #network, #pulseaudio, #bluetooth, #custom-nightlight, #custom-timer {
     padding: 0 0px;
-    margin: 0 15px; 
     background: transparent;
     color: @scheenesWeiß;
 }
 
-#pulseaudio {
-    margin: 0 4px;
-    margin-right: 0px;
-}
-
 #custom-power {
-    margin: 0 2px;
+    margin-right: 5px;
 }
 
 #network {
-    margin-right: 12px;
-    margin-left: 18px;
+    margin-right: 32px;
+    font-weight: 600;
 }
 
 #clock {
-    font-weight: 700;
-    margin: 0 20px;
+    font-weight: 600;
+    margin: 0 10px;
 }
 
 #pulseaudio {
-    margin: 0 10px;
+    margin: 0 12px;
+    margin-right: 16px;
+    font-weight: 600;
 }
 
 #bluetooth {
     color: #89b4fa; /* Ein schönes Blau */
+    margin-right: 18px;
 }
 
 #bluetooth.disabled {
@@ -127,15 +124,16 @@ tooltip label {
 }
 
 #custom-nightlight {
-    margin-left: 18px;
+    margin-left:13px; 
+    margin-right:29px; 
 }
 
 #custom-updates {
     padding: 0 5px;
-    margin: 0 10px; 
+    margin: 1 10px 0 0px; 
     background: transparent;
     color: @scheenesWeiß;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 #window {
@@ -145,16 +143,15 @@ tooltip label {
     color: @scheenesWeiß;
 }
 
-/* In deiner style.css: */
 #custom-logo {
     background-image: url("/home/michaels/.config/waybar/CachyOS.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    min-width: 25px;
-    min-height: 25px;
+    min-width: 10px;
+    min-height: 10px;
     padding: 0 10px;
-    margin: 0 0px 0 5px;
+    margin: 0 0px 0 10px;
 }
 
 #logo-updates #custom-updates {
@@ -162,12 +159,13 @@ tooltip label {
 }
 
 #custom-timer {
-    
+    margin: 0 15px; 
+    font-weight: 600;
 }
 
 #taskbar {
     background: @backgroundlight;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 28px;
     padding:0px;
     font-weight: normal;
     font-style: normal;
@@ -176,14 +174,16 @@ tooltip label {
 
 #custom-zen {
     font-size: 24px;
-    margin: 0 0px 0 33px; 
+    margin: 0 0px 0 28px; 
+    font-weight: 600;
 }
 
 #custom-rofi {
-    margin: 0 0px 0 30px; 
+    margin: 0 0px 0 20px; 
 }
 
 #custom-filemanager {
-    margin: 0 0px 0 20px; 
+    margin: 0 0px 0 15px; 
     font-size: 24px;
+    font-weight: 600;
 }

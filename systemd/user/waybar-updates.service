@@ -3,4 +3,4 @@ Description=Update counter for Waybar
 
 [Service]
 Type=oneshot
-ExecStart=%h/.config/waybar/fetch-updates.sh
+ExecStart=%h/.config/waybar/scripts/fetch-updates-quantity.sh

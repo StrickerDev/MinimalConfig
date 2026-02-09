@@ -15,7 +15,7 @@
     
     "group/essentials": {
         "orientation": "horizontal",
-        "modules": ["custom/timer", "pulseaudio", "custom/nightlight", "bluetooth", "custom/power", "network", "clock"]
+        "modules": ["custom/timer", "pulseaudio", "custom/nightlight", "bluetooth", "network", "custom/power", "clock"]
     },
 
     "group/logo-updates":  {
@@ -166,7 +166,7 @@
     }
   },
 "custom/zen": {
-    "format": "󱦞",
+    "format": "󰺕",
     "on-click": "zen-browser",
     "tooltip": false
 },
